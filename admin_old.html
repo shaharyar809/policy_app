@@ -5,42 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Policy Management</title>
     <link rel="stylesheet" href="styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Include the Google Identity Services library -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <style>
-        /* Your existing styles */
         .custom-button {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            padding: 10px 15px;
+            justify-content: center; /* Centers content horizontally */
+            font-size: 18px; /* Increase font size */
+            padding: 10px 15px; /* Add padding for better appearance */
             border: none;
             cursor: pointer;
-            border-radius: 5px;
-            width: 150px;
+            border-radius: 5px; /* Optional rounded corners */
+            width: 150px; /* Set a fixed width if needed */
         }
+    
         .button-icon {
-            margin-right: 8px;
-        }
-        .hidden {
-            display: none; /* Hide elements with this class */
+            margin-right: 8px; /* Space between icon and text */
         }
     </style>
+
 </head>
 <body>
-    <!-- <div id="g_id_onload"
-         data-client_id="YOUR_CLIENT_ID"
-         data-callback="handleCredentialResponse">
-    </div>
-    <div class="g_id_signin" data-type="standard"></div> -->
-
-    <div id="content" class="container hidden">
+    <div class="container">
         <h1>User Policy Management</h1>
-        <!-- Your existing content -->
         <div class="search-container">
             <label for="searchPhone">Search by Phone Number</label>
             <input type="text" id="searchPhone" placeholder="Phone Number" pattern="03\d{9}" maxlength="11" title="Phone number must start with 03 and be 11 digits long">
@@ -50,14 +39,18 @@
         </div>
         <div class="button-group">
             <button id="addUserBtn">Add User</button>
+
+            <!-- <button onclick="window.open('https://play.google.com/store/apps/details?id=com.jubileeinsurance.jubileelifeinsurance&hl=en&pli=1', '_blank')">Android</button>
+            <button onclick="window.open('https://apps.apple.com/pk/app/jubilee-health/id1416648031', '_blank')">iOS</button> -->
+
             <button class="custom-button" onclick="window.open('https://play.google.com/store/apps/details?id=com.jubileeinsurance.jubileelifeinsurance&hl=en&pli=1', '_blank')">
                 <i class="fab fa-android fa-2x button-icon"></i> Android
             </button>
             <button class="custom-button" onclick="window.open('https://apps.apple.com/pk/app/jubilee-health/id1416648031', '_blank')">
                 <i class="fab fa-apple fa-2x button-icon"></i> iOS
             </button>
+
         </div>
-        <!-- Your existing table and form -->
         <table>
             <thead>
                 <tr>
@@ -81,12 +74,16 @@
                     <div class="form-group">
                         <label for="fullname">Full Name</label>
                         <input type="text" id="fullname" placeholder="Full Name" required pattern="[A-Za-z\s]+" title="Please enter a valid name (letters only)">
+                        
                         <label for="cnic">CNIC</label>
                         <input type="text" id="cnic" placeholder="CNIC" required pattern="\d{13}" maxlength="13" title="CNIC must be exactly 13 digits">
+                        
                         <label for="phone_number">Phone Number</label>
                         <input type="text" id="phone_number" placeholder="Phone Number" required pattern="03\d{9}" maxlength="11" title="Phone number must start with 03 and be 11 digits long">
+                        
                         <label for="policy_number">Policy Number</label>
                         <input type="text" id="policy_number" placeholder="Policy Number" required pattern="[A-Za-z0-9]+" title="Please enter a valid policy number (alphanumeric)">
+                        
                         <label for="dob">Date of Birth</label>
                         <input type="date" id="dob" required>
                     </div>
@@ -95,20 +92,6 @@
             </div>
         </div>
     </div>
-
-    <div id="loginMessage" class="container">
-        <h1>Please Log In to Access the Site</h1>
-        <div id="g_id_onload"
-             data-client_id="827471733319-o1c5dvirtuns29mvddfm7n73ua0ifmmr.apps.googleusercontent.com"
-             data-callback="handleCredentialResponse">
-        </div>
-        <div class="g_id_signin" data-type="standard"></div>
-    </div>
-
-    <!-- <script>
-        
-    </script> -->
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
