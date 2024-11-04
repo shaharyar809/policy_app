@@ -144,3 +144,29 @@ document.addEventListener("DOMContentLoaded", () => {
         addUserForm.reset();
     }
 });
+
+// Handle Google sign-in response
+function handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+
+    // If authentication is successful, store the credential and show the main content
+    if (response.credential) {
+        localStorage.setItem('googleToken', response.credential); // Store token in localStorage
+        document.getElementById('content').classList.remove('hidden');
+        document.getElementById('loginMessage').classList.add('hidden');
+    } else {
+        alert("Google Sign-In failed. Please try again.");
+    }
+}
+
+// Check if user is already logged in on page load
+window.onload = function() {
+    const token = localStorage.getItem('googleToken');
+    if (token) {
+        document.getElementById('content').classList.remove('hidden');
+        document.getElementById('loginMessage').classList.add('hidden');
+    } else {
+        document.getElementById('loginMessage').classList.remove('hidden');
+        document.getElementById('content').classList.add('hidden');
+    }
+};
