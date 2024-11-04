@@ -4,6 +4,7 @@ header("Content-Type: application/json");
 // Database connection setup
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=policy_app", "root", "");
+    // $pdo = new PDO("mysql:host=sql212.infinityfree.com;dbname=if0_37626097_policy", "if0_37626097", "AXHOOXaRrDFOGyW");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     exitWithError("Database connection failed");
