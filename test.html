@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google OAuth 2.0 Login</title>
+    <!-- Include the Google Identity Services library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- Google Sign-In button -->
+    <div id="g_id_onload"
+         data-client_id="827471733319-o1c5dvirtuns29mvddfm7n73ua0ifmmr.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <script>
+        // Handle the response from Google
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            // Decode and verify the token (on your server if sensitive)
+            // Here, just log the token or send it to your server for verification
+        }
+    </script>
+</body>
+</html>
