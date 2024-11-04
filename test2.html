@@ -32,15 +32,11 @@
     </style>
 </head>
 <body>
-    <div id="g_id_onload"
-         data-client_id="827471733319-o1c5dvirtuns29mvddfm7n73ua0ifmmr.apps.googleusercontent.com"  <!-- Replace this with your actual Google client ID -->
+    <!-- <div id="g_id_onload"
+         data-client_id="YOUR_CLIENT_ID"
          data-callback="handleCredentialResponse">
     </div>
-
-    <div id="loginMessage" class="container">
-        <h1>Please Log In to Access the Site</h1>
-        <div class="g_id_signin" data-type="standard"></div>
-    </div>
+    <div class="g_id_signin" data-type="standard"></div> -->
 
     <div id="content" class="container hidden">
         <h1>User Policy Management</h1>
@@ -98,6 +94,15 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <div id="loginMessage" class="container">
+        <h1>Please Log In to Access the Site</h1>
+        <div id="g_id_onload"
+             data-client_id="827471733319-o1c5dvirtuns29mvddfm7n73ua0ifmmr.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
     </div>
 
     <script>
