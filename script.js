@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const response = await fetch("http://policy476.infinityfreeapp.com/api.php?action=add", {
+            const response = await fetch("api.php?action=add", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     async function loadUsers(phone = '', cnic = '') {
-        const url = `http://policy476.infinityfreeapp.com/api.php?${phone ? `phone_number=${phone}` : ''}${cnic ? `${phone ? '&' : ''}cnic=${cnic}` : ''}`;
+        const url = `api.php?${phone ? `phone_number=${phone}` : ''}${cnic ? `${phone ? '&' : ''}cnic=${cnic}` : ''}`;
         try {
             const response = await fetch(url);
             const result = await response.json();
